@@ -15,6 +15,6 @@ public class MainPage extends BasePage{
     public By sidebar = By.xpath("//input[@id='vector-main-menu-dropdown-checkbox']");
 
     public By name = By.xpath("(//span[contains(text(),'Selenium1223')])[1]");;
-    public By user_icon = By.xpath("//input[@id='vector-user-links-dropdown-checkbox']");
+    public By user_icon = By.xpath("//div[@id='vector-user-links-dropdown']");
 
 }
