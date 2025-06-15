@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 
-public class LoginPage {
+public class LoginPage extends BasePage{
     public String url  = "https://auth.wikimedia.org/enwiki/wiki/Special:UserLogin";
     public String user_Name = "Selenium1223";
     public String userPass = "automation223";

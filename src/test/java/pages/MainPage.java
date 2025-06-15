@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 
-public class MainPage {
+public class MainPage extends BasePage{
     public  String url = "https://en.wikipedia.org/wiki/Main_Page";
     public String title = "Wikipedia, the free encyclopedia";
     public By mainLogo = By.xpath("//span[@class='mw-logo-container skin-invert']");
