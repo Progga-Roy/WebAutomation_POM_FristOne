@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.MainPage;
+import utilities.DataSet;
 import utilities.DriverSetUp;
 
 public class TestLoginPage extends DriverSetUp {
@@ -56,5 +57,19 @@ public class TestLoginPage extends DriverSetUp {
 //      login_page.getElement(login_page.errorMsg);
         Assert.assertEquals(login_page.getElementText(login_page.errorMsg),login_page.errorText);
         Assert.assertTrue(login_page.visibleState(login_page.loginBtn));
+    }
+
+
+    @Test(dataProvider = "invalidUserCredentials", dataProviderClass = DataSet.class)
+    public void TestUserCanLoginWithUserInvalidCredentials(String userName, String pass, String error_massage){
+        mainPage.loadAPage(mainPage.url);
+        mainPage.clickOnElement(mainPage.login_btn);
+        login_page.writeOneElement(login_page.userInput,userName);
+        login_page.writeOneElement(login_page.password,pass);
+        login_page.clickOnElement(login_page.checkBox);
+        login_page.clickOnElement(login_page.loginBtn);
+        Assert.assertEquals(login_page.getElementText(login_page.errorMsg),error_massage);
+        Assert.assertTrue(login_page.visibleState(login_page.loginBtn));
+
     }
 }
